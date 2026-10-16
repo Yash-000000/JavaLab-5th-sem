@@ -1,1 +1,45 @@
+import java.util.*;
 
+class Person{
+    String name;
+
+    Person(String n){
+        this.name = n;
+    }
+    void introduce(){
+      System.out.println("Hi! My name is :"+ this.name);
+    }
+}
+
+class Employee extends Person{
+    String empId;
+    Employee(String name, String ID){
+        super(name);
+       this.empId = ID;
+    }
+    void introduce(){
+      System.out.println("Hi! My emp id is: " + this.empId);
+    }
+}
+
+class Manager extends Person{
+    String ManagerId;
+
+    Manager(String name, String ID){
+        super(name);
+        this.ManagerId = ID;
+    }
+    void introduce(){
+      System.out.println("Hi! My id is: " + this.ManagerId);
+    }
+}
+class Main{
+    public static void main (String[] args){
+        Employee E1 = new Employee("Shivam", "EMP124");
+        Manager M1 = new Manager("Edwin", "MNG123");
+
+        System.out.println("Employee ID: " + E1.empId + "Manager ID: " + M1.ManagerId);
+        E1.introduce();
+        M1.introduce();
+    }
+}
